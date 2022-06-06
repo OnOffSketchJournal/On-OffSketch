@@ -10,20 +10,23 @@ Repository structure
 *  `common/`: the hash function and bitset data structure used by many algorithms
 *  `PE/`: the implementation of algorithms on persistence estimation in our experiments
 *  `FPI/`: the implementation of algorithms on finding persistent items in our experiments
+*  `Botnet/`: the implementation of existing algorithms on Botnet Detection
 *  `benchmark.h`: C++ header of some benchmarks about AAE, F1 Score, and throughput
+*  `Botnet_Detection.h`: C++ header of some benchmarks about Botnet
 
 Requirements
 -------
 - cmake
 - g++
 
-We conducted all experiments on a machine with one 6-core processors (6 threads, Intel(R) Core(TM) i5-8400 CPU @ 2.80GHz) and 16 GB DRAM memory. Each processor has three levels of cache memory: one 32KB L1 data caches and one 32KB L1 instruction cache for each core, one 256KB L2 cache for each core, and one 9MB L3 cache shared by all cores.
+We conduct the experiments on a server with a 18-core CPU (36 threads, Intel(R) Core(TM) i9-10980XE CPU @ 3.00GHz) and 128GB total DRAM memory. 
+Each core has three levels of cache memory: 64KB L1 cache, 1MB L2 cache, and 24.75MB L3 cache shared by all cores. All the codes uses -O3 optimization.
 
-How to run
+How to run (make sure the path to dataset is right in main.cpp)
 -------
 
 ```bash
 $ cmake .
 $ make
-$ ./bench your-dataset
+$ ./bench
 ```
